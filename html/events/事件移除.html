@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>事件移除</title>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <button>事件绑定</button>
+    <script>
+        $(function () {
+            function fn(){
+                console.log("janine hello")
+            }
+            $("button").on("click", fn);
+            $("button").on("click", function () {
+                console.log("janine 123")
+            });
+            $("button").on("mouseleave", function () {
+                console.log("janine mouseleave")
+            });
+            $("button").on("mouseenter", function () {
+                console.log("janine mouseenter")
+            });
+            // off方法如果不传递参数，会移除所有的事件
+            // $("button").off();
+            // off方法如果传递一个参数，会移除所有指定类型的事件
+            // $("button").off("click");
+            // off方法如果传递两个参数，会移除所有指定类型的指定事件
+            $("button").off("click",fn);
+        })
+    </script>
+</body>
+</html>
