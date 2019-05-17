@@ -46,41 +46,41 @@
                 3. 什么是默认行为
                 4. 如何阻止默认行为
             */
-        })
-        $(".son").click(function (event) {
-            alert("son");
-        });
-        $(".father").click(function () {
-            alert("father");
-        })
-        // 自动触发 .father 的点击事件
-        // $(".father").trigger("click");
-        // $(".father").triggerHandler("click");
+            $(".son").click(function (event) {
+                alert("son");
+            });
+            $(".father").click(function () {
+                alert("father");
+            })
+            // 自动触发 .father 的点击事件
+            // $(".father").trigger("click");
+            // $(".father").triggerHandler("click");
 
-        // $(".son").trigger("click");
-        // $(".son").triggerHandler("click");
+            // $(".son").trigger("click");
+            // $(".son").triggerHandler("click");
 
-        /* $("input[type='submit']").click(function () {
+            /* $("input[type='submit']").click(function () {
             alert("submit");
-        }); */
+            }); */
 
-        /*
+            /*
             trigger: 如果利用 trigger 自动触发事件，会触发默认行为
             triggerHandler: 如果利用 triggerHandler 自动触发事件，不会触发默认行为
-        */
-        // $("input[type='submit']").trigger("click");
-        // $("input[type='submit']").triggerHandler("click");
+            */
+            // $("input[type='submit']").trigger("click");
+            // $("input[type='submit']").triggerHandler("click");
 
-        /* $("a").click(function () {
+            /* $("a").click(function () {
             alert("a");
+            })
+            // $("a").triggerHandler("click");
+            // a 标签 ： trigger 不能触发默认行为
+            $("a").trigger("click"); */
+            $("span").click(function () {
+                alert("a");
+            })
+            $("span").trigger("click");
         })
-        // $("a").triggerHandler("click");
-        // a 标签 ： trigger 不能触发默认行为
-        $("a").trigger("click"); */
-        $("span").click(function () {
-            alert("a");
-        })
-        $("span").trigger("click");
     </script>
 </body>
 

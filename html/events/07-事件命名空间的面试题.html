@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>事件冒泡和默认行为</title>
+    <title>事件命名空间的面试题</title>
     <style>
         * {
             margin: 0;
@@ -31,37 +31,33 @@
     <div class="father">
         <div class="son"></div>
     </div>
-    <a href="http://www.baidu.com">我是百度</a>
+    <!-- <a href="http://www.baidu.com">我是百度</a> -->
+    <a href="http://www.baidu.com"><span>我是百度</span></a>
     <form action="http://www.taobao.com">
         <input type="text">
         <input type="submit" value="注册">
     </form>
     <script>
         $(function () {
-            // 编写jQuery相关代码
-            /*
-                1. 什么是事件冒泡
-                2. 如何阻止事件冒泡
-                3. 什么是默认行为
-                4. 如何阻止默认行为
-            */
-            $(".son").click(function (event) {
-                alert("son");
-                // return false;
-                event.stopPropagation();
+            $(".father").on("click.ls", function (event) {
+                alert("father click1");
             });
 
-            $(".father").click(function () {
-                alert("father");
-            })
+            $(".father").on("click", function (event) {
+                alert("father click2");
+            });
 
-            $("a").click(function (event) {
-                alert("注册");
-                // return false;
-                event.preventDefault();
-            })
+            $(".son").on("click.ls", function (event) {
+                alert("son click1");
+            });
+
+            /*
+             *  利用trigger触发子元素带命名空间的事件，
+             *  那么父元素带相同命名空间的事件也会被触发，
+             *  而父元素没有命名空间的事件不会被触发
+             */
+            $(".son").trigger("click.ls");
         })
-        
     </script>
 </body>
 
