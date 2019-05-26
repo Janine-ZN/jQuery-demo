@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>prop属性节点</title>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <span class="span1" name="janine"></span>
+    <span class="span2" name="kms"></span>
+    <!-- <input type="checkbox" checked> -->
+    <input type="checkbox">
+    <script>
+        $(function () {
+            /* 
+            1. prop(name|pro|key,val|fn)
+            特点和attr方法一致
+            2. removeProp(name)
+            特点和removeAttr方法一致
+            */
+            $("span").eq(0).prop("demo", "janine");
+            $("span").eq(1).prop("demo", "kms");
+
+            console.log($("span").eq(0).prop("demo"));
+            $("span").eq(1).removeProp("demo");
+            /*
+            注意点:
+            prop属性不仅能够操作属性，还可以操作属性节点
+
+            官方推荐在操作属性节点时，具有 true 和 false 两个属性的属性节点，如
+            checked，selected 或者 disableed 使用 prop(),其他的使用 attr()
+            */
+            console.log($("span").prop("class"));
+            $("span").prop("class", "box");
+            // 选中状态
+            /* console.log($("input").prop("checked"));    // true
+            console.log( $("input").attr("checked"));   // checked */
+            // 未选中状态
+            console.log($("input").prop("checked")); // false
+            console.log($("input").attr("checked")); // undefined
+
+        })
+    </script>
+
+</body>
+
+</html>
