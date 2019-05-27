@@ -44,18 +44,17 @@
                 1. 事件必须是通过 on 绑定的
                 2. 事件必须通过 trigger 来触发
             */
+            $(".son").on("click.zs", function (event) {
+                alert("张三的命名空间");
+            });
+
+            $(".son").on("click.ls", function (event) {
+                alert("李四的命名空间");
+            });
+
+            // $(".son").trigger("click.zs");
+            $(".son").trigger("click.ls");
         })
-        
-        $(".son").on("click.zs", function (event) {
-            alert("张三的命名空间");
-        });
-
-        $(".son").on("click.ls", function (event) {
-            alert("李四的命名空间");
-        });
-
-        // $(".son").trigger("click.zs");
-        $(".son").trigger("click.ls");
     </script>
 </body>
 
