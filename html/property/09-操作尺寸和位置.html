@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>操作尺寸和位置</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .father {
+            width: 200px;
+            height: 200px;
+            background: red;
+            border: 50px solid #000;
+            margin-left: 50px;
+            position: relative;
+        }
+
+        .son {
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+
+        }
+    </style>
+    <script src="../../js/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <button>获取</button>
+    <button>设置</button>
+    <script>
+        $(function () {
+            // 获取设置
+            $("button").eq(0).click(function () {
+                // 获取元素的宽度
+                console.log($(".father").width());
+                // offset([coordinates]) : 获取元素距离窗口的偏移位
+                console.log($(".son").offset().left)
+                // position() : 获取元素距离定位元素的偏移位
+                console.log($(".son").position().left);
+            });
+            // 监听设置
+            $("button").eq(1).click(function () {
+                $(".father").width("500px");
+                // 注意点：position方法只能获取不能设置
+                /* $(".son").position({
+                    left: 10
+                }) */
+                $(".son").css({
+                    left: 10
+                })
+            })
+        })
+    </script>
+
+</body>
+
+</html>
