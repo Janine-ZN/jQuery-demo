@@ -6,28 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>新浪微博</title>
-    <style>
-        .comment {
-            width: 300px;
-            height: 100px;
-            resize: none;
-            outline: none;
-        }
-
-        .send {
-            width: 82px;
-            height: 30px;
-            border: none;
-            background: #fd8040;
-            color: #fff;
-        }
-    </style>
+    <link rel="stylesheet" href="../../css/weibo.css">
     <script src="../../js/jquery-3.2.1.min.js"></script>
+    <script src="../../js/weibo.js"></script>
 </head>
 
 <body>
-    <textarea name="" class="comment" id="" cols="30" rows="10"></textarea>
-    <input type="button" value="发布" class="send">
+    <div>
+        <textarea name="" class="comment" id="" cols="30" rows="10"></textarea>
+        <input type="button" value="发布" class="send" disabled>
+    </div>
+    <div class="massageList">
+        <div class="info">
+            <p>
+                《破冰行动》原型正是广东警方海陆空联合出动的“雷霆扫毒”行动，
+                一举清剿中国第一制毒村，集结3000多警力，缴获近3吨冰毒，包括村支书蔡东家在内的180多名制贩毒成员被抓...</p>
+            <p><span>删除</span></p>
+        </div>
+
+    </div>
+
 </body>
 
 </html>
