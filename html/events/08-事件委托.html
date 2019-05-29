@@ -33,6 +33,7 @@
             /* $("ul>li").click(function () {
                 console.log($(this).html());
             }) */
+            // li 委托给 ul
             $("ul").delegate("li", "click", function () {
                 console.log($(this).html());
             })

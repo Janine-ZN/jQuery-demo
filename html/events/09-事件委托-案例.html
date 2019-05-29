@@ -122,6 +122,7 @@
                     '<input type = "text" name = "" id = "" >' +
                     '<span></span> </div ></div>');
                 $("body").append($model);
+                // .model>span  委托给 body
                 $("body").delegate(".model>span", "click", function () {
                     $model.remove();
                 });
