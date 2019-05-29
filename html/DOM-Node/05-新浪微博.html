@@ -12,27 +12,19 @@
 </head>
 
 <body>
+    <!-- 功能需求：
+        1. 实施监听 textarea 的输入内容(*** 事件委托)
+        2. 发布按钮在 textarea 没有内容的时候，显示 disabled，否则显示 disabled false
+        3. 点踩点赞(*** 事件委托)
+        4. 获取实时日期
+        5. 插入 发布的内容（插到前面）
+        6. 删除 发布的内容（删除节点）
+    -->
     <div>
         <textarea name="" class="comment" id="" cols="30" rows="10"></textarea>
         <input type="button" value="发布" class="send" disabled>
     </div>
     <div class="massageList">
-        <div class="info">
-            <p class="infoText">
-                《破冰行动》原型正是广东警方海陆空联合出动的“雷霆扫毒”行动，
-                一举清剿中国第一制毒村，集结3000多警力，缴获近3吨冰毒，
-                包括村支书蔡东家在内的180多名制贩毒成员被抓...
-            </p>
-            <p class="infoOperation">
-                <span class="infoTime">2018-09-12 21:30:23</span>
-                <span class="infoHandle">
-                    <a href="javascript:;">0</a>
-                    <a href="javascript:;">0</a>
-                    <a href="javascript:;">删除</a>
-                </span>
-            </p>
-        </div>
-
     </div>
 
 </body>
